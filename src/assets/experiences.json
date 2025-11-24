@@ -1,0 +1,54 @@
+[
+  {
+    "company": "Devsu",
+    "role": "Software Engineer",
+    "period": "Apr 2021 - Present",
+    "description": "Leading architectural decisions and full-stack development for enterprise clients.",
+    "projects": [
+      {
+        "name": "SM Energy",
+        "details": "Led architectural design of a scalable, micro frontend-driven React platform supported by Django and FastAPI."
+      },
+      {
+        "name": "Kushki (Tech Lead)",
+        "details": "Oversaw team projects, coordinated sprints, and ensured code standards using React/Next.js and AWS Lambda."
+      },
+      {
+        "name": "Brightline",
+        "details": "Upgraded booking module using Next.js and Tailwind CSS for a modern, agile design."
+      },
+      {
+        "name": "Titan Mobile App",
+        "details": "Developed a shopping assistant app using Flutter and VIPER architecture with Bitrise CI/CD."
+      },
+      {
+        "name": "Devsu Code Jam",
+        "details": "Built a web application using Next.js, Prismic CMS, and Netlify."
+      }
+    ]
+  },
+  {
+    "company": "Jobsquare SA",
+    "role": "Lead Android Developer",
+    "period": "Feb 2019 - Apr 2021",
+    "description": "Managed complete Android development lifecycle for the Easyfix application.",
+    "projects": [
+      {
+        "name": "Easyfix Android App",
+        "details": "Managed all aspects of Android Lifecycle, designed immersive UIs, and integrated push notifications for enhanced engagement."
+      }
+    ]
+  },
+  {
+    "company": "Conto360 SA",
+    "role": "Software Developer",
+    "period": "Dec 2018 - Jan 2019",
+    "description": "Collaborated on pre-release software project development.",
+    "projects": [
+      {
+        "name": "Panora",
+        "details": "Used Django web framework for agile creation of a robust and scalable backend."
+      }
+    ]
+  }
+]
