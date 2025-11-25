@@ -7,7 +7,10 @@ import {
   SiPython,
   SiDjango,
   SiFastapi,
+  SiAndroid,
+  SiFlutter,
   SiGit,
+  SiGraphql,
 } from 'react-icons/si';
 
 const TechStack = () => {
@@ -19,8 +22,10 @@ const TechStack = () => {
     { name: 'JavaScript', icon: SiJavascript },
     { name: 'Python', icon: SiPython },
     { name: 'Django', icon: SiDjango },
-    { name: 'Django Rest Framework', icon: SiDjango },
     { name: 'FastAPI', icon: SiFastapi },
+    {name: 'GraphQL', icon: SiGraphql},
+    { name: 'Android', icon: SiAndroid },
+    { name: 'Flutter', icon: SiFlutter },
     { name: 'Git', icon: SiGit },
   ];
 

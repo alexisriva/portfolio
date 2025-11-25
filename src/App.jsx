@@ -1,5 +1,7 @@
+import AISummary from './components/AISummary';
 import Contact from './components/Contact';
 import Experience from './components/Experience';
+import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import TechStack from './components/TechStack';
@@ -16,14 +18,12 @@ const App = () => (
     <div className='relative z-10 max-w-4xl mx-auto px-6 py-20 sm:py-32 space-y-32'>
       <Hero />
       <TechStack />
+      <AISummary />
       <Experience />
       <Projects />
       <Testimonials />
       <Contact />
-
-      <footer className='pt-20 border-t border-neutral-900 text-center text-neutral-600 text-xs tracking-widest uppercase'>
-        Alexis Rivadeneira © {new Date().getFullYear()}
-      </footer>
+      <Footer />
     </div>
   </div>
 );
