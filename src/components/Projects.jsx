@@ -85,7 +85,7 @@ const Projects = () => {
                   <path d='M7 7h10v10' />
                 </svg>
               </div>
-              <p className='text-neutral-400 text-sm leading-relaxed mb-6 flex-grow'>
+              <p className='text-neutral-400 text-sm leading-relaxed mb-6 grow'>
                 {project.description || 'No description available.'}
               </p>
               <div className='flex items-center gap-4 text-xs text-neutral-500 font-medium uppercase tracking-wider'>

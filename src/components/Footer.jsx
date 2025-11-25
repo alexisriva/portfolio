@@ -27,7 +27,7 @@ const Footer = () => (
       <a
         href='/RESUME-RIVADENEIRA.pdf'
         download='Alexis_Rivadeneira_Resume.pdf'
-        className='px-6 py-2 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-sm font-medium shadow-lg shadow-emerald-900/20 hover:shadow-emerald-900/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center gap-2'
+        className='px-6 py-2 rounded-full bg-linear-to-r from-emerald-600 to-teal-600 text-white text-sm font-medium shadow-lg shadow-emerald-900/20 hover:shadow-emerald-900/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center gap-2'
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'

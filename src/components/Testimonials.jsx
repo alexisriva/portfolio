@@ -60,7 +60,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`flex-shrink-0 transition-all duration-500 ${
+              className={`shrink-0 transition-all duration-500 ${
                 isMobile ? 'w-[85%] mx-2' : 'w-[60%] mx-4'
               } ${index === currentIndex ? 'opacity-100 scale-100' : 'opacity-40 scale-95'}`}
             >
@@ -78,7 +78,7 @@ const Testimonials = () => {
                   </p>
                 </div>
                 <div className='flex items-center gap-4 pt-6 border-t border-neutral-800'>
-                  <div className='w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg'>
+                  <div className='w-12 h-12 rounded-full bg-linear-to-br from-emerald-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg'>
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
@@ -98,14 +98,14 @@ const Testimonials = () => {
         <div className="flex gap-4">
           <button 
             onClick={prevTestimonial}
-            className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-all hover:scale-110 active:scale-95"
+            className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-all hover:scale-110 active:scale-95 cursor-pointer"
             aria-label="Previous testimonial"
           >
             <FiChevronLeft size={24} />
           </button>
           <button 
             onClick={nextTestimonial}
-            className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-all hover:scale-110 active:scale-95"
+            className="p-3 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-all hover:scale-110 active:scale-95 cursor-pointer"
             aria-label="Next testimonial"
           >
             <FiChevronRight size={24} />
