@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { SiGithub } from 'react-icons/si';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -20,6 +21,10 @@ const Projects = () => {
             name: repo.name,
             description: repo.description,
             url: repo.html_url,
+            homepage:
+              repo.homepage === 'https://alexisrivadeneira.com'
+                ? null
+                : repo.homepage,
             language: repo.language,
             stars: repo.stargazers_count,
           }))
@@ -58,48 +63,70 @@ const Projects = () => {
         {!loading &&
           !error &&
           projects.map((project) => (
-            <a
+            <div
               key={project.name}
-              href={project.url}
-              target='_blank'
-              rel='noopener noreferrer'
               className='group p-6 rounded-2xl bg-neutral-900/30 border border-neutral-800 hover:border-neutral-600 hover:bg-neutral-900/50 transition-all duration-300 flex flex-col h-full'
             >
-              <div className='flex justify-between items-start mb-4'>
+              <div className='flex items-center gap-2 mb-4'>
+                <img
+                  src={`https://raw.githubusercontent.com/alexisriva/${project.name}/main/public/logo.png`}
+                  alt='Logo'
+                  className='w-8 h-8'
+                />
                 <h3 className='text-xl font-semibold text-neutral-200 group-hover:text-white transition-colors'>
                   {project.name}
                 </h3>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='20'
-                  height='20'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  className='text-neutral-500 group-hover:text-white transition-colors opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0'
-                >
-                  <path d='M7 17L17 7' />
-                  <path d='M7 7h10v10' />
-                </svg>
               </div>
               <p className='text-neutral-400 text-sm leading-relaxed mb-6 grow'>
                 {project.description || 'No description available.'}
               </p>
-              <div className='flex items-center gap-4 text-xs text-neutral-500 font-medium uppercase tracking-wider'>
-                <span className='flex items-center gap-1.5'>
-                  <span className='w-2 h-2 rounded-full bg-emerald-500' />
-                  {project.language || 'Code'}
-                </span>
-                {project.stars > 0 && (
-                  <span className='flex items-center gap-1'>
-                    ★ {project.stars}
+              <div className='flex items-center justify-between'>
+                <div className='flex items-center gap-4 text-xs text-neutral-500 font-medium uppercase tracking-wider'>
+                  <span className='flex items-center gap-1.5'>
+                    <span className='w-2 h-2 rounded-full bg-emerald-500' />
+                    {project.language || 'Code'}
                   </span>
-                )}
+                  {project.stars > 0 && (
+                    <span className='flex items-center gap-1'>
+                      ★ {project.stars}
+                    </span>
+                  )}
+                </div>
+                <div className='flex items-center gap-3'>
+                  <a
+                    className='text-neutral-500 hover:text-white'
+                    href={project.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <SiGithub />
+                  </a>
+                  {project.homepage && (
+                    <a
+                      className='text-neutral-500 hover:text-white'
+                      href={project.homepage}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='20'
+                        height='20'
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        stroke='currentColor'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      >
+                        <path d='M7 17L17 7' />
+                        <path d='M7 7h10v10' />
+                      </svg>
+                    </a>
+                  )}
+                </div>
               </div>
-            </a>
+            </div>
           ))}
       </div>
     </section>
