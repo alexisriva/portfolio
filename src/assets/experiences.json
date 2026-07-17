@@ -1,29 +1,29 @@
 [
   {
     "company": "Devsu",
-    "role": "Software Engineer",
+    "role": "Senior Software Engineer, Tech Lead",
     "period": "Apr 2021 - Present",
     "description": "Leading architectural decisions and full-stack development for enterprise clients.",
     "projects": [
       {
-        "name": "SM Energy",
-        "details": "Led architectural design of a scalable, micro frontend-driven React platform supported by Django and FastAPI."
+        "name": "SM Energy (Lead Software Developer)",
+        "details": "Led architectural transition of legacy oil and gas visualization applications to a scalable micro-frontend React platform with Django/FastAPI microservices. Collaborated with stakeholders to align technical strategy with business goals and manage technical debt."
       },
       {
         "name": "Kushki (Tech Lead)",
-        "details": "Oversaw team projects, coordinated sprints, and ensured code standards using React/Next.js and AWS Lambda."
+        "details": "Mentored a cross-functional development team, successfully coordinating sprints and removing blockers. Enforced code quality, branching, and CI/CD best practices, improving team velocity and reducing bugs."
       },
       {
         "name": "Brightline",
-        "details": "Upgraded booking module using Next.js and Tailwind CSS for a modern, agile design."
+        "details": "Rebuilt the core booking module using Next.js and Tailwind CSS, resulting in improved core web vitals, user experience, and conversion rates."
       },
       {
-        "name": "Titan Mobile App",
-        "details": "Developed a shopping assistant app using Flutter and VIPER architecture with Bitrise CI/CD."
+        "name": "La Favorita",
+        "details": "Designed and developed a Flutter-based shopping assistant application using VIPER architecture and established automated CI/CD pipelines via Bitrise."
       },
       {
         "name": "Devsu Code Jam",
-        "details": "Built a web application using Next.js, Prismic CMS, and Netlify."
+        "details": "Built and deployed a high-traffic event site using Next.js and Prismic CMS on Netlify."
       }
     ]
   },
@@ -31,23 +31,23 @@
     "company": "Jobsquare SA",
     "role": "Lead Android Developer",
     "period": "Feb 2019 - Apr 2021",
-    "description": "Managed complete Android development lifecycle for the Easyfix application.",
+    "description": "Managed complete Android development lifecycle for the EasyFix application.",
     "projects": [
       {
-        "name": "Easyfix Android App",
-        "details": "Managed all aspects of Android Lifecycle, designed immersive UIs, and integrated push notifications for enhanced engagement."
+        "name": "EasyFix App",
+        "details": "Spearheaded the technical vision and development from conceptual design through successful App Store launch and subsequent maintenance. Mentored junior developers in Android best practices, memory management, and clean UI/UX, and integrated push notification workflows and background services."
       }
     ]
   },
   {
-    "company": "Conto360 SA",
+    "company": "Conto360",
     "role": "Software Developer",
     "period": "Dec 2018 - Jan 2019",
     "description": "Collaborated on pre-release software project development.",
     "projects": [
       {
-        "name": "Panora",
-        "details": "Used Django web framework for agile creation of a robust and scalable backend."
+        "name": "PANORA",
+        "details": "Engineered scalable backend services using Django, ensuring clean code delivery and partnering with Product Managers to align technical development milestones with core business goals."
       }
     ]
   }
