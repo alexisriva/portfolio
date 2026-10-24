@@ -6,24 +6,69 @@
     "description": "Leading architectural decisions and full-stack development for enterprise clients.",
     "projects": [
       {
-        "name": "SM Energy (Lead Software Developer)",
-        "details": "Led architectural transition of legacy oil and gas visualization applications to a scalable micro-frontend React platform with Django/FastAPI microservices. Collaborated with stakeholders to align technical strategy with business goals and manage technical debt."
+        "name": "SM Energy",
+        "roleTag": "Lead Software Developer",
+        "domain": "Architecture & Web",
+        "details": "Led architectural transition of legacy oil and gas visualization applications to a scalable micro-frontend React platform with Django/FastAPI microservices. Collaborated with stakeholders to align technical strategy with business goals and manage technical debt.",
+        "stack": [
+          "React",
+          "Micro-Frontends",
+          "Django",
+          "FastAPI",
+          "Python",
+          "System Architecture"
+        ],
+        "image": "https://picsum.photos/id/942/900/560?grayscale",
+        "imageAlt": "Angular concrete architectural structure representing distributed platform engineering"
       },
       {
-        "name": "Kushki (Tech Lead)",
-        "details": "Mentored a cross-functional development team, successfully coordinating sprints and removing blockers. Enforced code quality, branching, and CI/CD best practices, improving team velocity and reducing bugs."
+        "name": "Kushki",
+        "roleTag": "Tech Lead",
+        "domain": "Backend & APIs",
+        "details": "Mentored a cross-functional development team, successfully coordinating sprints and removing blockers. Enforced code quality, branching, and CI/CD best practices, improving team velocity and reducing bugs.",
+        "stack": [
+          "Technical Leadership",
+          "CI/CD Pipelines",
+          "Agile Delivery",
+          "Code Quality"
+        ]
       },
       {
         "name": "Brightline",
-        "details": "Rebuilt the core booking module using Next.js and Tailwind CSS, resulting in improved core web vitals, user experience, and conversion rates."
+        "roleTag": "Senior Full-Stack Engineer",
+        "domain": "Architecture & Web",
+        "details": "Rebuilt the core booking module using Next.js and Tailwind CSS, resulting in improved core web vitals, user experience, and conversion rates.",
+        "stack": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Core Web Vitals"
+        ],
+        "image": "https://picsum.photos/id/620/900/560?grayscale",
+        "imageAlt": "Arched transit bridge infrastructure spanning water"
       },
       {
         "name": "La Favorita",
-        "details": "Designed and developed a Flutter-based shopping assistant application using VIPER architecture and established automated CI/CD pipelines via Bitrise."
+        "roleTag": "Mobile Architect",
+        "domain": "Mobile & CI/CD",
+        "details": "Designed and developed a Flutter-based shopping assistant application using VIPER architecture and established automated CI/CD pipelines via Bitrise.",
+        "stack": [
+          "Flutter",
+          "VIPER Architecture",
+          "Bitrise CI/CD",
+          "Dart"
+        ]
       },
       {
         "name": "Devsu Code Jam",
-        "details": "Built and deployed a high-traffic event site using Next.js and Prismic CMS on Netlify."
+        "roleTag": "Frontend Engineer",
+        "domain": "Architecture & Web",
+        "details": "Built and deployed a high-traffic event site using Next.js and Prismic CMS on Netlify.",
+        "stack": [
+          "Next.js",
+          "Prismic CMS",
+          "High-Traffic Web"
+        ]
       }
     ]
   },
@@ -35,7 +80,18 @@
     "projects": [
       {
         "name": "EasyFix App",
-        "details": "Spearheaded the technical vision and development from conceptual design through successful App Store launch and subsequent maintenance. Mentored junior developers in Android best practices, memory management, and clean UI/UX, and integrated push notification workflows and background services."
+        "roleTag": "Lead Android Developer",
+        "domain": "Mobile & CI/CD",
+        "details": "Spearheaded the technical vision and development from conceptual design through successful App Store launch and subsequent maintenance. Mentored junior developers in Android best practices, memory management, and clean UI/UX, and integrated push notification workflows and background services.",
+        "stack": [
+          "Android SDK",
+          "Kotlin",
+          "Java",
+          "Push Workflows",
+          "Memory Management"
+        ],
+        "image": "https://picsum.photos/id/618/900/560?grayscale",
+        "imageAlt": "Steel lattice structural geometry"
       }
     ]
   },
@@ -47,7 +103,15 @@
     "projects": [
       {
         "name": "PANORA",
-        "details": "Engineered scalable backend services using Django, ensuring clean code delivery and partnering with Product Managers to align technical development milestones with core business goals."
+        "roleTag": "Backend Engineer",
+        "domain": "Backend & APIs",
+        "details": "Engineered scalable backend services using Django, ensuring clean code delivery and partnering with Product Managers to align technical development milestones with core business goals.",
+        "stack": [
+          "Django",
+          "Python",
+          "REST APIs",
+          "Database Modeling"
+        ]
       }
     ]
   }

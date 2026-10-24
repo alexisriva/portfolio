@@ -1,39 +1,40 @@
 const Contact = () => (
-  <section className='space-y-12'>
-    <h2 className='text-3xl font-bold tracking-tight text-neutral-200'>
-      Contact
-    </h2>
-    <div className='p-8 rounded-2xl bg-neutral-900/30 border border-neutral-800 text-center space-y-6'>
-      <p className='text-neutral-400 text-lg max-w-xl mx-auto leading-relaxed'>
-        Have a project in mind? Let's discuss how we can build something
-        extraordinary together. Schedule a free 30-minute call.
-      </p>
-      <a
-        href='https://calendar.app.google/6NbKHXwEwsbHZp8y7'
-        target='_blank'
-        rel='noopener noreferrer'
-        className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-neutral-950 font-medium hover:bg-neutral-200 transition-colors duration-300'
-      >
-        <span>Book a Call</span>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='16'
-          height='16'
-          viewBox='0 0 24 24'
-          fill='none'
-          stroke='currentColor'
-          strokeWidth='2'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-        >
-          <rect x='3' y='4' width='18' height='18' rx='2' ry='2'></rect>
-          <line x1='16' y1='2' x2='16' y2='6'></line>
-          <line x1='8' y1='2' x2='8' y2='6'></line>
-          <line x1='3' y1='10' x2='21' y2='10'></line>
-        </svg>
-      </a>
+  <section id="contact" className="page-frame pt-[var(--section-gap)]">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="lg:col-span-7 space-y-5 reveal-up">
+        <h2 className="font-display text-head text-[var(--ink)]">
+          Start a Conversation
+        </h2>
+        <p className="text-lead text-[var(--ink-secondary)] max-w-[52ch]">
+          Available for Lead Software Engineer roles, staff-level architecture ownership, and technical advisory across web and mobile organizations.
+        </p>
+      </div>
+
+      <div className="lg:col-span-5 bg-[var(--surface)] p-7 sm:p-9 rounded-[4px] space-y-6 reveal-up delay-1">
+        <p className="text-body text-[var(--ink)] font-medium">
+          Schedule a direct 30-minute architecture or hiring call, or download the full engineering dossier.
+        </p>
+        <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+          <a
+            href="https://calendar.app.google/6NbKHXwEwsbHZp8y7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-[4px] bg-[var(--accent-solid)] text-[var(--accent-ink)] text-body font-bold hover:bg-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]"
+          >
+            <span>Book a 30-Min Call</span>
+          </a>
+          <a
+            href="/RESUME-RIVADENEIRA.pdf"
+            download="Alexis_Rivadeneira_Resume.pdf"
+            className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-[4px] bg-[var(--surface-raised)] text-[var(--ink)] text-body font-medium hover:bg-[#272b27] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]"
+          >
+            <span>Download PDF Resume</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 );
 
 export default Contact;
+

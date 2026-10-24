@@ -1,78 +1,147 @@
-import { useState } from 'react';
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { useMemo, useState } from 'react';
 import experiences from '../assets/experiences.json';
 
-const ExperienceItem = ({ exp }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  return (
-    <div className='relative pl-8 md:pl-12'>
-      {/* Timeline Dot */}
-      <div className='absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-emerald-500 border-4 border-neutral-950 shadow-[0_0_0_4px_rgba(16,185,129,0.2)]' />
-
-      <div className='space-y-4'>
-        <div
-          className='cursor-pointer group'
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2'>
-            <div>
-              <div className='flex items-center gap-2'>
-                <h3 className='text-xl font-bold text-neutral-100 group-hover:text-emerald-400 transition-colors'>
-                  {exp.role}
-                </h3>
-                <div className='text-neutral-500 group-hover:text-emerald-400 transition-colors'>
-                  {isExpanded ? (
-                    <FiChevronUp size={20} />
-                  ) : (
-                    <FiChevronDown size={20} />
-                  )}
-                </div>
-              </div>
-              <p className='text-emerald-400 font-medium'>{exp.company}</p>
-            </div>
-            <span className='text-sm font-mono text-neutral-500 bg-neutral-900/50 px-3 py-1 rounded-full border border-neutral-800 w-fit'>
-              {exp.period}
-            </span>
-          </div>
-
-          <p className='text-neutral-400 max-w-2xl leading-relaxed mt-4'>
-            {exp.description}
-          </p>
-        </div>
-
-        {isExpanded && (
-          <div className='space-y-3 pt-2 animate-in fade-in slide-in-from-top-2 duration-200'>
-            {exp.projects.map((project, pIndex) => (
-              <div
-                key={pIndex}
-                className='group p-4 rounded-xl bg-neutral-900/30 border border-neutral-800/50 hover:border-neutral-700 transition-colors'
-              >
-                <h4 className='text-neutral-200 font-semibold text-sm mb-1'>
-                  {project.name}
-                </h4>
-                <p className='text-neutral-500 text-sm leading-relaxed'>
-                  {project.details}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
+const DOMAINS = [
+  'All Systems',
+  'Architecture & Web',
+  'Backend & APIs',
+  'Mobile & CI/CD',
+];
 
 const Experience = () => {
+  const [selectedDomain, setSelectedDomain] = useState('All Systems');
+
+  const domainCounts = useMemo(() => {
+    const counts = {
+      'All Systems': 0,
+      'Architecture & Web': 0,
+      'Backend & APIs': 0,
+      'Mobile & CI/CD': 0,
+    };
+    experiences.forEach((exp) => {
+      exp.projects.forEach((project) => {
+        counts['All Systems'] += 1;
+        if (counts[project.domain] !== undefined) {
+          counts[project.domain] += 1;
+        }
+      });
+    });
+    return counts;
+  }, []);
+
+  const filteredExperiences = useMemo(() => {
+    return experiences
+      .map((exp) => ({
+        ...exp,
+        projects:
+          selectedDomain === 'All Systems'
+            ? exp.projects
+            : exp.projects.filter(
+                (project) => project.domain === selectedDomain
+              ),
+      }))
+      .filter((exp) => exp.projects.length > 0);
+  }, [selectedDomain]);
+
   return (
-    <section className='space-y-12'>
-      <h2 className='text-3xl font-bold tracking-tight text-neutral-200'>
-        Experience
-      </h2>
-      <div className='relative border-l border-neutral-800 ml-3 md:ml-6 space-y-12'>
-        {experiences.map((exp, index) => (
-          <ExperienceItem key={index} exp={exp} />
-        ))}
+    <section id="experience" className="page-frame pt-[var(--section-gap)]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        {/* Left Rail: Sticky Section Header & Domain Filter */}
+        <div className="lg:col-span-4 lg:sticky lg:top-10 space-y-6">
+          <h2 className="font-display text-head text-[var(--ink)] reveal-up">
+            Selected Experience
+          </h2>
+          <p className="text-body text-[var(--ink-secondary)] reveal-up delay-1">
+            Seven years of production leadership across enterprise consulting
+            and high-growth startups. Filter systems by architectural domain.
+          </p>
+
+          {/* Interactive Live Domain Filter */}
+          <div className="flex flex-wrap lg:flex-col gap-2 pt-2 reveal-up delay-2">
+            {DOMAINS.map((domain) => {
+              const isActive = selectedDomain === domain;
+              const count = domainCounts[domain];
+              return (
+                <button
+                  key={domain}
+                  type="button"
+                  onClick={() => setSelectedDomain(domain)}
+                  aria-pressed={isActive}
+                  className={`px-4 py-3 rounded-[4px] text-small transition-colors flex items-center justify-between gap-3 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682] ${
+                    isActive
+                      ? 'bg-[var(--accent-solid)] text-[var(--accent-ink)] font-bold'
+                      : 'bg-[var(--surface)] text-[var(--ink-secondary)] hover:bg-[var(--surface-raised)] hover:text-[var(--ink)] font-medium'
+                  }`}
+                >
+                  <span className="text-left">{domain}</span>
+                  <span className="tabular-nums shrink-0">{count}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Right Rail: Exposed Case Ledger */}
+        <div className="lg:col-span-8 space-y-12">
+          {filteredExperiences.map((exp) => (
+            <div key={exp.company} className="space-y-6">
+              <div>
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-4">
+                  <h3 className="font-display text-lead font-bold text-[var(--ink)]">
+                    {exp.company} — {exp.role}
+                  </h3>
+                  <span className="text-small tabular-nums text-[var(--ink-muted)] shrink-0">
+                    {exp.period}
+                  </span>
+                </div>
+                <p className="text-body text-[var(--ink-secondary)] mb-6">
+                  {exp.description}
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                {exp.projects.map((project) => (
+                  <article
+                    key={project.name}
+                    className="bg-[var(--surface)] p-6 sm:p-8 rounded-[4px] space-y-5 reveal-up"
+                  >
+                    {project.image && (
+                      <img
+                        src={project.image}
+                        alt={project.imageAlt}
+                        width="900"
+                        height="560"
+                        loading="lazy"
+                        className="w-full h-48 sm:h-56 object-cover rounded-[2px] bg-[var(--surface-raised)]"
+                      />
+                    )}
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <h4 className="text-lead font-bold text-[var(--ink)] leading-snug">
+                        {project.name}
+                      </h4>
+                      <span className="text-small font-medium text-[var(--accent)]">
+                        {project.roleTag}
+                      </span>
+                    </div>
+                    <p className="text-body text-[var(--ink-secondary)] max-w-[65ch]">
+                      {project.details}
+                    </p>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {project.stack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 rounded-[2px] bg-[var(--surface-raised)] text-[var(--ink)] text-small font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
