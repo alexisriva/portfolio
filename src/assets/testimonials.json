@@ -1,8 +1,8 @@
 [
   {
-    "name": "Miguel Sanchez",
-    "role": "Fullstack Developer @ Devsu",
-    "text": "Alexis is an excellent team player who is always willing to support others. He has strong technical skills, a solid foundation in software engineering, and consistently demonstrates a genuine eagerness to learn and expand his skill set."
+    "name": "Kurt Vardeman",
+    "role": "Software Engineer @ SM Energy",
+    "text": "Alexis is a great coworker and member of the Custom Development Team. One thing I love about Alexis is that when he solves a problem, his solution is always well thought-out and is coded in a clean, easy-to-understand way. He is frequently tasked with solving difficult problems, and never hesitates to tackle them, even if it requires learning a new skill or framework. I appreciate his friendliness, teamwork, and expertise."
   },
   {
     "name": "Francisco Cáceres",
@@ -10,8 +10,13 @@
     "text": "Alexis is a highly committed software professional with strong leadership skills. During our time working together in a startup environment, he consistently demonstrated responsibility, initiative, and technical excellence. He leads by example and brings a strong sense of ownership to every project he is involved in."
   },
   {
-    "name": "Kurt Vardeman",
-    "role": "Software Engineer @ SM Energy",
-    "text": "Alexis is a great coworker and member of the Custom Development Team. One thing I love about Alexis is that when he solves a problem, his solution is always well thought-out and is coded in a clean, easy-to-understand way. He is frequently tasked with solving difficult problems, and never hesitates to tackle them, even if it requires learning a new skill or framework. I appreciate his friendliness, teamwork, and expertise."
+    "name": "Viviana Laurido Aguirre",
+    "role": "Senior Software Developer @ TechSoft Systems S.A.",
+    "text": "Alexis possesses leadership qualities and extensive technical knowledge; he is always eager to learn and adopts a decision-oriented approach to his work. He is a team player who is open to feedback, constantly striving for improvement to ensure the success of assigned projects."
+  },
+  {
+    "name": "Miguel Sanchez",
+    "role": "Fullstack Developer @ Devsu",
+    "text": "Alexis is an excellent team player who is always willing to support others. He has strong technical skills, a solid foundation in software engineering, and consistently demonstrates a genuine eagerness to learn and expand his skill set."
   }
 ]

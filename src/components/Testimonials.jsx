@@ -1,9 +1,6 @@
 import testimonials from '../assets/testimonials.json';
 
 const Testimonials = () => {
-  const featured = testimonials[2];
-  const supporting = [testimonials[1], testimonials[0]];
-
   return (
     <section
       id="endorsements"
@@ -19,41 +16,25 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-          <div className="lg:col-span-6 bg-[var(--field-invert-surface)] p-7 sm:p-10 rounded-[4px] flex flex-col justify-between gap-8 reveal-up delay-2">
-            <blockquote className="text-body leading-[1.6] text-[var(--field-invert-ink)] font-normal">
-              “{featured.text}”
-            </blockquote>
-            <div>
-              <div className="text-body font-bold text-[var(--field-invert-ink)]">
-                {featured.name}
-              </div>
-              <div className="text-small text-[var(--field-invert-muted)]">
-                {featured.role}
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-6 flex flex-col justify-between gap-6 lg:gap-8">
-            {supporting.map((item) => (
-              <div
-                key={item.name}
-                className="bg-[var(--field-invert-surface)] p-7 sm:p-8 rounded-[4px] flex flex-col justify-between gap-6 flex-1 reveal-up delay-3"
-              >
-                <blockquote className="text-body leading-[1.55] text-[var(--field-invert-ink)]">
-                  “{item.text}”
-                </blockquote>
-                <div>
-                  <div className="text-body font-bold text-[var(--field-invert-ink)]">
-                    {item.name}
-                  </div>
-                  <div className="text-small text-[var(--field-invert-muted)]">
-                    {item.role}
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+          {testimonials.map((item) => (
+            <div
+              key={item.name}
+              className="bg-[var(--field-invert-surface)] p-7 sm:p-8 rounded-[4px] flex flex-col justify-between gap-6 reveal-up"
+            >
+              <blockquote className="text-body leading-[1.6] text-[var(--field-invert-ink)] font-normal">
+                “{item.text}”
+              </blockquote>
+              <div>
+                <div className="text-body font-bold text-[var(--field-invert-ink)]">
+                  {item.name}
+                </div>
+                <div className="text-small text-[var(--field-invert-muted)]">
+                  {item.role}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
