@@ -187,26 +187,27 @@ const Projects = () => {
 
   return (
     <section
-      id="projects"
-      className="page-frame pt-[var(--section-gap)]"
-      aria-label="Open-Source Ledger"
+      id='projects'
+      className='page-frame pt-(--section-gap)'
+      aria-label='Open-Source Ledger'
     >
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+      <div className='flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10'>
         <div>
-          <h2 className="font-display text-head text-[var(--ink)] reveal-up">
+          <h2 className='font-display text-head text-(--ink) reveal-up'>
             Open-Source Ledger
           </h2>
-          <p className="text-body text-[var(--ink-secondary)] max-w-[46ch] mt-2 reveal-up delay-1">
-            Public repositories, architectural experiments, and production utilities maintained on GitHub.
+          <p className='text-body text-(--ink-secondary) max-w-[46ch] mt-2 reveal-up delay-1'>
+            Public repositories, architectural experiments, and production
+            utilities maintained on GitHub.
           </p>
         </div>
       </div>
 
       {/* 12-Column Asymmetric 7/5 Split */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+      <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start'>
         {/* Columns 1–7 — The Quiet Ledger */}
-        <div className="lg:col-span-7 space-y-2">
+        <div className='lg:col-span-7 space-y-2'>
           {displayedProjects.map((project, index) => {
             const isSelected = safeActiveIndex === index;
             const hasFailed = failedImages[project.id];
@@ -217,37 +218,35 @@ const Projects = () => {
             return (
               <div
                 key={project.id || project.name}
-                className={`p-4 sm:p-5 rounded-[4px] transition-colors ${
-                  isSelected
-                    ? 'bg-[var(--surface-raised)]'
-                    : 'bg-[var(--surface)]'
+                className={`p-4 sm:p-5 rounded-sm transition-colors ${
+                  isSelected ? 'bg-(--surface-raised)' : 'bg-(--surface)'
                 }`}
               >
                 <button
-                  type="button"
+                  type='button'
                   onClick={() => setActiveIndex(index)}
                   onMouseEnter={() => setActiveIndex(index)}
-                  className="w-full text-left flex flex-col sm:flex-row sm:items-center justify-between gap-2 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]"
+                  className='w-full text-left flex flex-col sm:flex-row sm:items-center justify-between gap-2 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]'
                 >
-                  <div className="min-w-0 pr-2">
-                    <div className="text-body font-bold text-[var(--ink)]">
+                  <div className='min-w-0 pr-2'>
+                    <div className='text-body font-bold text-(--ink)'>
                       {project.name}
                     </div>
                     {project.description && (
-                      <div className="text-small text-[var(--ink-secondary)] line-clamp-1 mt-0.5">
+                      <div className='text-small text-(--ink-secondary) line-clamp-1 mt-0.5'>
                         {project.description}
                       </div>
                     )}
                   </div>
-                  <div className="flex items-center gap-3 shrink-0">
+                  <div className='flex items-center gap-3 shrink-0'>
                     {project.language && (
-                      <span className="text-small font-medium text-[var(--accent)]">
+                      <span className='text-small font-medium text-(--accent)'>
                         {project.language}
                       </span>
                     )}
                     {project.stars > 0 && (
-                      <span className="tabular-nums text-small text-[var(--ink-muted)] flex items-center gap-1">
-                        <FiStar size={13} className="text-[var(--accent)]" />
+                      <span className='tabular-nums text-small text-(--ink-muted) flex items-center gap-1'>
+                        <FiStar size={13} className='text-(--accent)' />
                         {project.stars}
                       </span>
                     )}
@@ -255,25 +254,25 @@ const Projects = () => {
                 </button>
 
                 {/* Mobile/Tablet inline details */}
-                <div className="lg:hidden">
+                <div className='lg:hidden'>
                   {index < 2 && (
-                    <div className="mt-3 overflow-hidden rounded-[2px]">
+                    <div className='mt-3 overflow-hidden rounded-xs'>
                       <img
                         src={mobileImage}
                         onError={() => handleImageError(project.id)}
                         alt={`${project.name} preview`}
-                        width="900"
-                        height="600"
-                        className="w-full aspect-[16/10] object-cover object-top bg-[var(--surface-raised)]"
+                        width='900'
+                        height='600'
+                        className='w-full aspect-16/10 object-cover object-top bg-(--surface-raised)'
                       />
                     </div>
                   )}
-                  <div className="flex items-center gap-4 pt-3 text-small">
+                  <div className='flex items-center gap-4 pt-3 text-small'>
                     <a
                       href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-bold text-[var(--ink)] hover:text-[var(--accent)] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]"
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='inline-flex items-center gap-1.5 font-bold text-(--ink) hover:text-(--accent) transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]'
                     >
                       <SiGithub size={14} />
                       <span>Source Code</span>
@@ -281,9 +280,9 @@ const Projects = () => {
                     {project.homepage && (
                       <a
                         href={project.homepage}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 font-medium text-[var(--accent)] hover:underline transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]"
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='inline-flex items-center gap-1.5 font-medium text-(--accent) hover:underline transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]'
                       >
                         <span>Live Demo</span>
                         <FiExternalLink size={13} />
@@ -297,9 +296,9 @@ const Projects = () => {
 
           {sortedProjects.length > 8 && (
             <button
-              type="button"
+              type='button'
               onClick={() => setShowAll((prev) => !prev)}
-              className="w-full py-3 px-4 rounded-[4px] bg-[var(--surface)] text-[var(--ink)] text-small font-medium hover:bg-[var(--surface-raised)] transition-colors cursor-pointer text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]"
+              className='w-full py-3 px-4 rounded-sm bg-(--surface) text-(--ink) text-small font-medium hover:bg-(--surface-raised) transition-colors cursor-pointer text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]'
             >
               {showAll
                 ? 'Show featured repositories (8)'
@@ -309,8 +308,8 @@ const Projects = () => {
         </div>
 
         {/* Columns 8–12 — Sticky Preview Panel */}
-        <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-10">
-          <div className="bg-[var(--surface)] p-6 rounded-[4px] space-y-5">
+        <div className='hidden lg:block lg:col-span-5 lg:sticky lg:top-10'>
+          <div className='bg-(--surface) p-6 rounded-sm space-y-5'>
             <img
               src={
                 failedImages[activeProject.id]
@@ -319,41 +318,41 @@ const Projects = () => {
               }
               onError={() => handleImageError(activeProject.id)}
               alt={`${activeProject.name} preview`}
-              width="900"
-              height="600"
-              className="w-full aspect-[16/10] object-cover object-top rounded-[2px] bg-[var(--surface-raised)]"
+              width='900'
+              height='600'
+              className='w-full aspect-16/10 object-cover object-top rounded-xs bg-(--surface-raised)'
             />
 
-            <div className="space-y-2">
-              <h3 className="font-display text-lead font-bold text-[var(--ink)] leading-tight line-clamp-2">
+            <div className='space-y-2'>
+              <h3 className='font-display text-lead font-bold text-(--ink) leading-tight line-clamp-2'>
                 {activeProject.name}
               </h3>
-              <p className="text-body text-[var(--ink-secondary)]">
+              <p className='text-body text-(--ink-secondary)'>
                 {activeProject.description ||
                   'Production repository and source implementation maintained by Alexis Rivadeneira.'}
               </p>
             </div>
 
-            <div className="flex items-center gap-4 text-small text-[var(--ink-muted)] tabular-nums">
+            <div className='flex items-center gap-4 text-small text-(--ink-muted) tabular-nums'>
               {activeProject.language && (
-                <span className="text-[var(--accent)] font-medium">
+                <span className='text-(--accent) font-medium'>
                   {activeProject.language}
                 </span>
               )}
               {activeProject.stars > 0 && (
-                <span className="flex items-center gap-1">
-                  <FiStar size={14} className="text-[var(--accent)]" />
+                <span className='flex items-center gap-1'>
+                  <FiStar size={14} className='text-(--accent)' />
                   <span>{activeProject.stars} stars</span>
                 </span>
               )}
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className='flex flex-wrap items-center gap-3 pt-2'>
               <a
                 href={activeProject.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] bg-[var(--accent-solid)] text-[var(--accent-ink)] text-small font-bold hover:bg-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]"
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-(--accent-solid) text-(--accent-ink) text-small font-bold hover:bg-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]'
               >
                 <SiGithub size={16} />
                 <span>Inspect Source</span>
@@ -361,9 +360,9 @@ const Projects = () => {
               {activeProject.homepage && (
                 <a
                   href={activeProject.homepage}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] bg-[var(--surface-raised)] text-[var(--ink)] text-small font-medium hover:bg-[#272b27] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]"
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-(--surface-raised) text-(--ink) text-small font-medium hover:bg-[#272b27] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]'
                 >
                   <span>Live Deployment</span>
                   <FiExternalLink size={15} />
@@ -378,4 +377,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

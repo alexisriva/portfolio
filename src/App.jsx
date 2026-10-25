@@ -6,7 +6,7 @@ import Projects from './components/Projects';
 import Testimonials from './components/Testimonials';
 
 const App = () => (
-  <div className='min-h-svh bg-[var(--bg)] text-[var(--ink)] overflow-x-hidden selection:bg-[#7fa682] selection:text-[#0c0d0c]'>
+  <div className='min-h-svh bg-(--bg) text-(--ink) overflow-x-hidden selection:bg-[#7fa682] selection:text-[#0c0d0c]'>
     <Hero />
     <Experience />
     <Projects />
