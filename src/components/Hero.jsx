@@ -4,16 +4,10 @@ const Hero = () => (
     className='page-frame min-h-[86svh] flex flex-col justify-between pb-12 sm:pb-16'
   >
     {/* Top Navigation Bar */}
-    <header className='flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-7 pb-12 sm:pb-16'>
-      <a
-        href='#top'
-        className='text-body font-bold tracking-tight text-(--ink) hover:text-(--accent) transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fa682]'
-      >
-        AR
-      </a>
+    <header className='flex items-center justify-center pt-7 pb-12 sm:pb-16'>
       <nav
         aria-label='Primary navigation'
-        className='flex items-center justify-between sm:justify-end gap-4 sm:gap-8 w-full sm:w-auto'
+        className='flex items-center justify-center gap-6 sm:gap-8'
       >
         <a
           href='#experience'
